@@ -1,122 +1,557 @@
-    body {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-    }
-    
-    h2,
-    h3,
-    h4 {
-        font-weight: 900;
-        text-transform: uppercase;
-    }
-    
-    h1 {
-        font-weight: 900;
-        font-size: 6rem;
-        text-transform: uppercase;
-    }
-    
-    a {
-        color: #E3E3E3;
-        text-decoration: none;
-    }
-    
-    a:hover {
-        color: #fbf702;
-        text-decoration: none;
-    }
-    
-    li {
-        cursor: pointer;
-    }
-    /* NAVAIGATION */
-    
-    .navbar {
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 500;
-        color: #ffffff;
-    }
-    
-    .navbar a {
-        text-decoration: none;
-        float: left;
-        font-size: 17px;
-    }
-    /* HOME BANNER */
-    
-    .home_piza_banner {
-        position: relative;
-    }
-    
-    .home_pizza_banner_elements {
-        position: absolute;
-        color: #ffffff;
-        text-align: center;
-    }
-    
-    .home_pizza_banner_text {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -60%);
-        color: #ffffff;
-        border: 1px solid #ffffff;
-        padding: 20px;
-    }
-    
-    .home_pizza_banner_description {
-        top: 68%;
-        left: 50%;
-        transform: translate(-50%, 50%);
-        color: #cfcfcf;
-    }
-    
-    .home_pizza_banner_order_button {
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, 50%);
-    }
-    /* Blink pizza banner promo text */
-    
-    .blink_me {
-        animation: blinker 1s linear infinite;
-    }
-    
-    @keyframes blinker {
-        50% {
-            opacity: 70%;
-        }
-    }
-    /* SHOP INFORMATION */
-    
-    .shop_information_background {
-        background-color: #141414;
-        color: azure;
-    }
-    
-    .shop_information_background span {
-        color: #fbf702;
-    }
-    
-    .shop_information_title {
-        font-size: 25px;
-    }
-    
-    .btn-main {
-        background-color: #fbf702;
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-    
-    .btn-main:hover {
-        background-color: #ffffff;
-        color: #1b1b00;
-    }
-    /* FOOTER */
-    
-    .page-footer {
-        background-color: #191919;
-        color: #fbf702;
-        font-size: 0.9rem;
-    }
+body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+a {
+	color: #E3E3E3;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fbf702;
+	text-decoration: none;
+}
+
+li {
+	cursor: pointer;
+}
+
+p {
+	font-weight: 300;
+	font-size: 0.7rem;
+}
+
+section {
+	scroll-snap-align: center;
+	display: flex;
+}
+
+/* NAVAIGATION */
+
+.navbar {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+.navbar a {
+	text-decoration: none;
+	float: left;
+	font-size: 17px;
+}
+
+/* HOME BANNER */
+
+.home_piza_banner h1 {
+	font-weight: 900;
+	font-size: 6rem;
+	text-transform: uppercase;
+}
+
+.home_piza_banner {
+	position: relative;
+}
+
+.home_pizza_banner_elements {
+	position: absolute;
+	color: #ffffff;
+	text-align: center;
+}
+
+.home_pizza_banner_text {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	padding: 20px;
+}
+
+.home_pizza_banner_description {
+	top: 68%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	color: #cfcfcf;
+}
+
+.home_pizza_banner_order_button {
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+
+/* Blink pizza banner promo text */
+
+.blink_me {
+	animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 70%;
+	}
+}
+
+/* SHOP INFORMATION */
+
+.shop_information_background {
+	background-color: #202020;
+	color: azure;
+}
+
+.shop_information_background span {
+	color: #fbf702;
+}
+
+.shop_information_title {
+	font-size: 25px;
+}
+
+.btn-main {
+	background-color: #fbf702;
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.btn-main:hover {
+	background-color: #ffffff;
+	color: #1b1b00;
+}
+
+.shop_information_background p {
+	font-size: 1rem;
+}
+
+/* Menu */
+
+.pizza-box {
+	min-height: 500px;
+	min-width: 350px;
+}
+
+.pizza-box:hover {
+	outline: 1px solid #cf0000;
+}
+
+.pizza-box h5 {
+	color: #ae0000;
+	padding: 15px 0 0;
+	font: 18px/22px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.newitem {
+	position: absolute;
+	right: 25px;
+	top: 60px;
+	width: 54px;
+	z-index: 1;
+}
+
+.pizza-image {
+	width: 285px;
+	height: auto;
+}
+
+.pizza-box p {
+	margin-left: 20px;
+	margin-right: 20px
+}
+
+.menu-price{
+	font-size: 1em;
+	font-weight: 500;
+}
+
+.order-button {
+	margin: 0 auto;
+	text-align: center;
+	width: 85%;
+}
+
+.order-button:hover {
+	background-color: #e70505;
+	color: #ffffff;
+}
+
+.kade_types {
+	margin-left: 100px;
+}
+
+.kade_types:hover {
+	opacity: 0.5 !important;
+	cursor: pointer;
+}
+
+.kade_types_captions:hover {
+	color: #ae0000;
+}
+
+/* Heding seperator */
+
+.pizza-heading h2 {
+	background: #fff;
+	color: #3a3a3a;
+}
+
+/* USER LOGIN FORM */
+
+.login-promotion {
+	width: 308px;
+	height: 238px;
+	background-size: cover;
+	background: url(../images/promotion1.png) no-repeat center center;
+	margin: 30px;
+}
+
+.button-holder {
+	text-align: center;
+}
+
+.signup a {
+	display: inline-block;
+	color: #e31836;
+	font: 15px 'Calibri';
+	text-decoration: underline;
+}
+
+/* CUST */
+/* .customisationContainerLeft {
+width: 38.7%;
+float: left;
+margin-bottom: 20px;
+} */
+
+.pizzaBox {
+	float: left;
+	height: 500px;
+	width: 100%;
+	/* min-height: 440px; */
+	border: 1px solid #fff;
+	overflow: hidden;
+}
+
+.pizzaBox img {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+
+/* .pizza-main-customizer {
+	border: 1px solid #cf0000;
+} */
+
+.pizza-main-customizer {
+	height: 400px;
+	width: 400px;
+	text-align: center;
+	margin-left: 16px;
+	margin-top: 12px;
+}
+
+.pizzaBox h4 {
+	color: #ae0000;
+	padding: 0 0 12px;
+	font-size: 1.8em;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+figure {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 240px;
+	margin-inline-end: 40px;
+}
+
+.pizzaImg {
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+.pizzaContent {
+	padding: 10px 15px 10px;
+	float: left;
+	width: 100%;
+}
+
+.pizzaContent p {
+	font-size: 16px;
+}
+
+.topins {
+	display: none;
+}
+
+/* TEST */
+
+ul.selectToppingsTab {
+	width: 100%;
+	float: left;
+	border-bottom: solid 1px #e5e5e5;
+}
+
+ul,
+li {
+	list-style: none;
+	padding-left: 2px;
+}
+
+ul.selectToppingsList li a:hover,
+ul.selectToppingsList li a.selected {
+	border-color: #ff9c8b;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	outline: none;
+}
+
+ul.selectToppingsList li a {
+	display: block;
+	color: #808080;
+	font: normal 15px/17px 'Calibri';
+	border: solid 1px transparent;
+	border-radius: 4px;
+	position: relative;
+	height: 57px;
+	padding-left: 5px;
+	padding-right: 15px;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	outline: none;
+}
+
+.panel {
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	position: relative;
+}
+
+.selectSizeBox {
+	margin-top: 50px;
+}
+
+/* .selectSizeBox img {
+width: 50%;
+} */
+
+.selectToppingsBox h4 {
+	font-size: 1.6rem;
+	font-weight: 200;
+	margin-bottom: 10px;
+}
+
+/* Pizza size select */
+
+.menu-modifier,
+.menu-modifier-multi {
+	border: 1px solid #ccc;
+	padding: 8px;
+	cursor: pointer;
+	width: 140px;
+	height: 60px;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+.sizeCode:hover {
+	border-color: #ff9c8b;
+}
+
+.selected {
+	border-color: #ff9c8b;
+}
+
+/* Pizza customizer price */
+
+.optionContainer {
+	width: 100%;
+	float: left;
+	border: solid 1px #e5e5e5;
+	margin-top: 15px;
+}
+
+.my-button {
+	margin: 5px 0 0 0;
+	color: #fff;
+	border-radius: 10px;
+	outline: none;
+}
+
+.delete-btn {
+	height: 35px;
+	width: 35px;
+	background: #005ae0;
+	border: #005ae0;
+}
+
+.plus-minus-btn {
+	height: 35px;
+	width: 35px;
+	background: #e00000;
+	border: #e00000;
+}
+
+.cusPrice {
+	color: #ae0000;
+	font-size: 25px;
+	font-weight: 600;
+	padding-left: 25px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.itemCounter {
+	width: 50px;
+	height: 35px;
+	font-size: 20px;
+	text-align: right;
+}
+
+/* ITEM-CART */
+
+table {
+	table-layout: auto;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table .absorbing-column {
+	width: 100%;
+}
+
+.cartTable img {
+	height: 60px;
+	width: 60px;
+}
+
+.checkout-btn {
+	width: 400px !important;
+	height: 60px !important;
+	font-size: 25px;
+	font-weight: 800;
+}
+
+/* ORDER */
+
+.order-confirm-form-label {
+	margin: 8px 0 0 0;
+	font-size: 15px;
+	font-weight: 900;
+}
+
+.order-confirm-form-input {
+	width: 100%;
+	padding: 8px 8px;
+	border-width: 1px !important;
+	border-style: solid !important;
+	border-radius: 3px !important;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.2em;
+	background-color: transparent;
+	border-color: #cccccc;
+}
+
+/* ODER SUMMARY BOX */
+
+.summary-box h3 {
+	color: #ae0000;
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.summary-box small,
+.price {
+	color: #ae0000;
+}
+
+.summary-box strong {
+	color: #ae0000;
+}
+
+.btn-submit:hover {
+	background-color: #090909 !important;
+}
+
+/* DELIVER PAGE */
+.thank-you-img {
+	justify-content: center;
+	display: flex;
+}
+
+.party-image {
+	height: 60px;
+	width: 60px;
+	margin: 10px;
+	alignment: right;
+}
+
+.deliver-timer p {
+	font-size: 2em;
+}
+
+.clock-numbers {
+	font-size: 5em;
+	font-weight: 600;
+}
+
+.bg-deliver-timer-gradient {
+	background: #ff2323;
+	background: linear-gradient(to right, #ff2323, #8500e2);
+}
+
+.timer {
+	width: 500px;
+}
+
+/* FOOTER */
+
+.page-footer {
+	background-color: #111111;
+	color: #fbf702;
+	font-size: 0.9rem;
+}
+
+/* TEST-------------------------------------------------------------------------------------------------------------------------------------- */
+
+.lol {
+	background: rgb(32, 32, 32);
+}
