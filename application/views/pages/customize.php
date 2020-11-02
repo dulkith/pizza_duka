@@ -76,8 +76,8 @@
 														<input id="form-toppings" name="form-toppings" type="hidden"
 															   value="<?php echo $item['description'] ?>"/>
 														<input id="form-qty" name="form-qty" type="hidden"/>
-														<input id="form-price" name="form-price" type="text"/>
-														<input id="form-total" name="form-total" type="text"/>
+														<input id="form-price" name="form-price" type="hidden"/>
+														<input id="form-total" name="form-total" type="hidden"/>
 
 														<button type="submit" class="btn btn-success btn-lg">ADD TO
 															CART
@@ -177,7 +177,7 @@
 													<?php endif; ?>
 													<div class="p-2">
 														<li id='b<?php echo $index + 1 ?>'>
-															<a href="javascript:showHide('#<?php echo $topping['slug'] ?>','#b<?php echo $index + 1 ?>','<?php echo $topping['price'] ?>');">
+															<a href="javascript:showHide('#<?php echo $topping['slug'] ?>','#b<?php echo $index + 1 ?>');">
 																<img alt=""
 																	 src="<?php echo base_url('assets/images/pizza_topping/icons/' . $topping['icon']) ?>">
 																<span><?php echo $topping['title'] ?></span>
@@ -217,7 +217,7 @@
 	$('#inputItemCount').val('1');
 
 	// get sizes prices and item price
-	const pizzaPrice = +"<?php echo $item['price'] ?>";
+	const pizzaPrice = Number(<?php echo $item['price'] ?>);
 	const sizePrices = <?php echo json_encode($sizes); ?>;
 	// get toppings data
 	const allToppings = <?php echo json_encode($toppings); ?>;
@@ -248,19 +248,22 @@
 	$('#form-price').val((finalTotal).toFixed(2));
 	$('#form-total').val((finalTotal * itemCount).toFixed(2));
 
-	function showHide(toppingName, toppingButton, price) {
+	function showHide(toppingName, toppingButton) {
 		// selection control
 		$(toppingName).toggle();
 		$(toppingButton).find('a').toggleClass('selected');
 		// price calculation
 		const slug = toppingName.substring(1);
+		const topping = allToppings.find(topping => topping.slug === slug);
+		//alert(topping.price);
+
 		if (appliedToppingsSlugs.indexOf(slug) > -1) {
 			// remove topping
-			finalTotal = (finalTotal - Number(price));
+			finalTotal = (finalTotal - Number(topping.price));
 			appliedToppingsSlugs = appliedToppingsSlugs.filter(topping => topping !== slug)
 		} else {
 			// add topping
-			finalTotal = (finalTotal + Number(price));
+			finalTotal = (finalTotal + Number(topping.price));
 			appliedToppingsSlugs.push(slug);
 		}
 		// set price to view
@@ -269,8 +272,9 @@
 		$('#form-price').val((finalTotal).toFixed(2));
 		// display selected toppings
 		let selectedToppings = '';
-		appliedToppingsSlugs.forEach(topping => {
-			selectedToppings += topping.replace(/([A-Z])/g, " $1").split(' ').slice(1).join(' ') + '<b>(' + Number(price).toFixed(2) + ')</b>, ';
+		appliedToppingsSlugs.forEach(appliedToppingsSlug => {
+			const toppingData = allToppings.find(topping => topping.slug === appliedToppingsSlug);
+			selectedToppings += toppingData.title + '<b>(' + Number(toppingData.price).toFixed(2) + ')</b>, ';
 		});
 		appliedToppings = selectedToppings.slice(0, -2);
 		document.getElementById("selectedToppings").innerHTML = `<h6>Selected Toppings: </h6>${appliedToppings}`;
