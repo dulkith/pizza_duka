@@ -72,11 +72,12 @@
 				<div class="col-4">
 
 					<div class="panel summary-box">
+						<div class="mt-5 mb-4 text-center">
+							<h4>Order Summary</h4>
+						</div>
 						<section class="my-4 mx-4">
-							<div class="mt-5 mb-5 text-center">
-								<h3>Order Summary</h3>
-							</div>
-							<div class="mb-5">
+
+							<div class="row">
 								<div class="col-md-12">
 									<strong>Subtotal</strong>
 									<div class="price float-right"><span>LKR </span><span>200.00</span></div>

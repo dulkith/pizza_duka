@@ -14,6 +14,11 @@
 
 		public function customize($id = NULL)
 		{
+			// get pizza sizes
+			$data['sizes'] = $this->SizeModel->getSizes();
+			// get pizza toppings
+			$data['toppings'] = $this->ToppingModel->getToppings();
+
 			// find item by id
 			$data['item'] = $this->ItemModel->getItems($id);
 			// validate item is empty or not
@@ -26,7 +31,9 @@
 			//page title
 			$headerData['pizzaPageTitle'] = $data['title'];
 
-			echo "<script>console.log(JSON.parse('" . json_encode($data['item']['title']) . "'));</script>";
+			echo "<script>console.log(JSON.parse('" . json_encode($data['item']) . "'));</script>";
+			echo "<script>console.log(JSON.parse('" . json_encode($data['sizes']) . "'));</script>";
+			echo "<script>console.log(JSON.parse('" . json_encode($data['toppings']) . "'));</script>";
 
 			// process views
 			$this->load->view('templates/header',$headerData);

@@ -6,9 +6,13 @@ class PizzaNowHome extends CI_Controller
 	{
 		$headerData['pizzaPageTitle'] = 'Home';
 
-		// load data fro database
+		// get pizza sizes
+		$data['sizes'] = $this->SizeModel->getSizes();
+
+		// load items data fro database
 		$data['items'] = $this->ItemModel->getItems();
 		echo "<script>console.log(JSON.parse('" . json_encode($data['items']) . "'));</script>";
+		echo "<script>console.log(JSON.parse('" . json_encode($data['sizes']) . "'));</script>";
 
 		// process views
 		$this->load->view('templates/header',$headerData);

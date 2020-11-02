@@ -172,8 +172,8 @@ section {
 }
 
 .menu-price{
-	font-size: 1em;
-	font-weight: 500;
+	font-size: 0.9em;
+	font-weight: 600;
 }
 
 .order-button {
@@ -200,40 +200,12 @@ section {
 	color: #ae0000;
 }
 
-/* Heding seperator */
+/* Heading separator */
 
 .pizza-heading h2 {
 	background: #fff;
 	color: #3a3a3a;
 }
-
-/* USER LOGIN FORM */
-
-.login-promotion {
-	width: 308px;
-	height: 238px;
-	background-size: cover;
-	background: url(../images/promotion1.png) no-repeat center center;
-	margin: 30px;
-}
-
-.button-holder {
-	text-align: center;
-}
-
-.signup a {
-	display: inline-block;
-	color: #e31836;
-	font: 15px 'Calibri';
-	text-decoration: underline;
-}
-
-/* CUST */
-/* .customisationContainerLeft {
-width: 38.7%;
-float: left;
-margin-bottom: 20px;
-} */
 
 .pizzaBox {
 	float: left;
@@ -250,9 +222,10 @@ margin-bottom: 20px;
 	left: 50px;
 }
 
-/* .pizza-main-customizer {
-	border: 1px solid #cf0000;
-} */
+/* .pizza-main-customizer {*/
+/*	border: 1px solid #cf0000;*/
+/*	 */
+/*}*/
 
 .pizza-main-customizer {
 	height: 400px;
@@ -298,8 +271,6 @@ figure {
 .topins {
 	display: none;
 }
-
-/* TEST */
 
 ul.selectToppingsTab {
 	width: 100%;
@@ -366,10 +337,6 @@ a {
 .selectSizeBox {
 	margin-top: 50px;
 }
-
-/* .selectSizeBox img {
-width: 50%;
-} */
 
 .selectToppingsBox h4 {
 	font-size: 1.6rem;
@@ -492,9 +459,9 @@ table .absorbing-column {
 
 /* ODER SUMMARY BOX */
 
-.summary-box h3 {
+.summary-box h4 {
 	color: #ae0000;
-	font-size: 1.8em;
+	font-size: 1.5em;
 	font-weight: 600;
 }
 

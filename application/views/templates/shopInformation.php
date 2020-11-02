@@ -13,7 +13,8 @@
 				</p>
 			</div>
 			<div class="col-md-4">
-				<a class="btn btn-main mt-5" href=""><i class="mr-2 fas fa-utensils"></i> CUSTOMISE PIZZA NOW</a>
+				<a class="btn btn-main mt-5" href="<?php echo base_url(); ?>customize/1"><i
+							class="mr-2 fas fa-utensils"></i> CUSTOMISE PIZZA NOW</a>
 			</div>
 		</div>
 	</div>

@@ -39,3 +39,12 @@
 
 	</div>
 </section>
+
+<script>
+	$('#clock').countdown('2021/1/1').on('update.countdown', function (event) {
+		const $this = $(this).html(event.strftime( '<div class="row thank-you-img">' +
+				'<div><span class="clock-numbers">%M</span> Min</div>'
+				+ '<div><span class="clock-numbers  ml-4">%S</span> Sec</div></div>'));
+	});
+
+</script>
