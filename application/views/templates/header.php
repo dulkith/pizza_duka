@@ -46,11 +46,15 @@
 							Menu</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="fas fa-info-circle fa-fw"></i> About</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="<?php echo base_url(); ?>order"><i class="fas fa-clipboard-list"></i>
 							Order</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo base_url(); ?>deliver"><i class="fas fa-car"></i>
+							Deliver</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i class="fas fa-info-circle fa-fw"></i> About</a>
 					</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url(); ?>cart" class="nav-link d-flex flex-row">

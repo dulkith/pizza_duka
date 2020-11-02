@@ -53,7 +53,7 @@
 															onclick="decrementItemCount()"><i
 																class="fas fa-minus"></i></button>
 													<input class="itemCounter" id="inputItemCount" disabled="disabled"
-														   type=number min=1 max=20>
+														   type=number min=1 max=20/>
 													<button class="my-button plus-minus-btn"
 															onclick="incrementItemCount()"><i
 																class="fas fa-plus"></i></button>
@@ -63,11 +63,27 @@
 												</div>
 
 												<div class="col-xs-4 text-center ml-4">
-													<a href="<?php echo base_url('add-to-cart/' . $item['id']); ?>">
-														<button type="button" class="btn btn-success btn-lg">ADD TO
+													<!-- Add customized pizza to cart-->
+													<form action="<?php echo base_url("add-to-cart-pizza"); ?>"
+														  method="POST">
+														<input id="form-id" name="form-id" type="hidden"
+															   value="<?php echo $item['id'] ?>"/>
+														<input id="form-image" name="form-image" type="hidden"
+															   value="<?php echo $item['image'] ?>"/>
+														<input id="form-title" name="form-title" type="hidden"
+															   value="<?php echo $item['title'] ?>"/>
+														<input id="form-size" name="form-size" type="hidden"/>
+														<input id="form-toppings" name="form-toppings" type="hidden"
+															   value="<?php echo $item['description'] ?>"/>
+														<input id="form-qty" name="form-qty" type="hidden"/>
+														<input id="form-price" name="form-price" type="text"/>
+														<input id="form-total" name="form-total" type="text"/>
+
+														<button type="submit" class="btn btn-success btn-lg">ADD TO
 															CART
 														</button>
-													</a>
+													</form>
+
 												</div>
 
 											</div>
@@ -226,6 +242,12 @@
 	// set default total
 	document.getElementById("pizza-price").innerHTML = `${finalTotal.toFixed(2)}`;
 
+	// set add to cart form data
+	$('#form-qty').val(1);
+	$('#form-size').val(`Size: ${selectedSize}(${(selectedSizePrice + pizzaPrice).toFixed(2)})`);
+	$('#form-price').val((finalTotal).toFixed(2));
+	$('#form-total').val((finalTotal * itemCount).toFixed(2));
+
 	function showHide(toppingName, toppingButton, price) {
 		// selection control
 		$(toppingName).toggle();
@@ -243,6 +265,8 @@
 		}
 		// set price to view
 		document.getElementById("pizza-price").innerHTML = (finalTotal * itemCount).toFixed(2);
+		$('#form-total').val((finalTotal * itemCount).toFixed(2));
+		$('#form-price').val((finalTotal).toFixed(2));
 		// display selected toppings
 		let selectedToppings = '';
 		appliedToppingsSlugs.forEach(topping => {
@@ -250,8 +274,11 @@
 		});
 		appliedToppings = selectedToppings.slice(0, -2);
 		document.getElementById("selectedToppings").innerHTML = `<h6>Selected Toppings: </h6>${appliedToppings}`;
-		if (appliedToppingsSlugs.length === 0)
+		$('#form-toppings').val(`Selected Toppings: ${appliedToppings}`);
+		if (appliedToppingsSlugs.length === 0) {
 			document.getElementById("selectedToppings").innerHTML = '';
+			$('#form-toppings').val('');
+		}
 	}
 
 	function showhidePizzaSize(select, unselect1, unselect2, sizeIndex) {
@@ -268,6 +295,12 @@
 		selectedSize = sizePrices[sizeIndex].title;
 		selectedSizePrice = calculatedPrice;
 		document.getElementById("pizza-price").innerHTML = (finalTotal * itemCount).toFixed(2);
+
+		// set submit form data
+		$('#form-size').val(`Size: ${selectedSize}(${(selectedSizePrice + pizzaPrice).toFixed(2)})`);
+		$('#form-price').val((finalTotal).toFixed(2));
+		$('#form-total').val((finalTotal * itemCount).toFixed(2));
+		//alert('xxx');
 	}
 
 	function incrementItemCount() {
@@ -276,7 +309,9 @@
 		// calculate total with item count
 		itemCount = document.getElementById("inputItemCount").value;
 		document.getElementById("pizza-price").innerHTML = (finalTotal * itemCount).toFixed(2);
-
+		// set submit form prices
+		$('#form-qty').val(itemCount);
+		$('#form-total').val((finalTotal * itemCount).toFixed(2));
 	}
 
 	function decrementItemCount() {
@@ -285,5 +320,8 @@
 		// calculate total with item count
 		itemCount = document.getElementById("inputItemCount").value;
 		document.getElementById("pizza-price").innerHTML = (finalTotal * itemCount).toFixed(2);
+		// set submit form prices
+		$('#form-qty').val(itemCount);
+		$('#form-total').val((finalTotal * itemCount).toFixed(2));
 	}
 </script>

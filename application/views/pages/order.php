@@ -58,8 +58,8 @@
 									</div>
 
 									<div class="col-12 mt-5 mb-3 d-flex justify-content-center">
-										<button type="button" class="btn btn-outline-success btn-lg checkout-btn">PLACE
-											ORDER
+										<button type="button" class="btn btn-outline-success btn-lg checkout-btn">
+											CHECKOUT
 										</button>
 
 									</div>
@@ -79,22 +79,35 @@
 
 							<div class="row">
 								<div class="col-md-12">
+									<strong>Number of Items</strong>
+									<div class="price float-right"><span><?php echo $cartCount ?></span></div>
+								</div>
+								<div class="col-md-12">
 									<strong>Subtotal</strong>
-									<div class="price float-right"><span>LKR </span><span>200.00</span></div>
+									<div class="price float-right">
+										<span>LKR </span><span><?php echo sprintf('%0.2f', $subTotal) ?></span></div>
 								</div>
 								<div class="col-md-12">
 									<strong>Tax</strong>
-									<div class="price float-right"><span>LKR </span><span>200.00</span></div>
+									<div class="price float-right"><span>LKR </span><span>0.00</span></div>
 								</div>
 								<div class="col-md-12">
 									<small>Deliver Charge</small>
-									<div class="price float-right"><span>-</span></div>
+									<div class="price float-right">
+										<span><small>LKR <?php echo sprintf('%0.2f', $deliverCharge) ?></small></span>
+									</div>
 									<hr>
 								</div>
 								<div class="col-md-12">
 									<strong>Total</strong>
-									<div class="price float-right"><span>LKR </span><span>400.00</span></div>
+									<div class="price float-right">
+										<span>LKR </span><span><?php echo sprintf('%0.2f', $total) ?></span></div>
 									<hr>
+								</div>
+								<div class="col-md-12 text-center mt-3 mb-4">
+									<a href="<?php echo base_url(); ?>cart">
+										<button type="button" class="btn btn-outline-danger btn-sm">VIEW ORDER</button>
+									</a>
 								</div>
 							</div>
 						</section>

@@ -117,14 +117,14 @@ INSERT INTO `items` (`id`, `title`, `description`, `category`, `image`, `can_cus
 (19, 'Garlic Bread', 'Our own unique twist on Garlic Bread. A must try dish which complements any main you order.', 'SIDES', 'Garlic_Bread.jpg', 0, 1, '500.00', '2020-11-01 04:15:23', 1),
 (20, 'Focaccia with Tomato', 'Focaccia Bread Seasoned with Garlic, Basil, Tomato & Olive Oil, Ideal Starter to seson your taste buds.', 'SIDES', 'Focaccia_with_Tomato.jpg', 0, 1, '400.00', '2020-11-01 04:15:23', 1),
 (21, 'Mustard Chicken Salad', 'A Fresh Garden Salad with Mixed greens, Sliced Chicken breasts, Tomato & our special mustard mayonaise sauce.', 'SIDES', 'Mustard_Chicken_Salad.jpg', 0, 1, '400.00', '2020-11-01 04:15:23', 1),
-(22, 'Crispy Chicken Wings', 'Marinated Chicken Wings served with a Spicy tomato sauce or Mustard Mayonaise.', 'SIDES', 'Crispy_Chicken.jpg', 0, 1, '600.00', '2020-11-01 04:15:23', 1),
-(23, 'Spiced Meat Riblets', 'Succulent Pork ribs glazed with a Spicy homemade sauce. A Crowd pleaser!', 'SIDES', 'Spiced_Meat_Riblets.jpg', 0, 1, '800.00', '2020-11-01 04:15:23', 1),
+(22, 'Crispy Chicken Wings', 'Marinated Chicken Wings served with a Spicy tomato sauce or Mustard Mayonaise.', 'SIDES', 'Crispy_Chicken.jpg', 0, 0, '600.00', '2020-11-01 04:15:23', 1),
+(23, 'Spiced Meat Riblets', 'Succulent Pork ribs glazed with a Spicy homemade sauce. A Crowd pleaser!', 'SIDES', 'Spiced_Meat_Riblets.jpg', 0, 0, '800.00', '2020-11-01 04:15:23', 1),
 -- DESSERTS
-(24, 'Berry Fruit Salad', 'The Ultimate Dessert for all our Pizza Fans. Berry fruit salad', 'DESSERTS', 'berry-fruit-salad.jpg', 0, 1, '900.00', '2020-11-01 04:15:23', 1),
-(25, 'Chocolate Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Chocolate ice cream', 'DESSERTS', 'Chocolate-Ice-Cream.jpg', 0, 1, '400.00', '2020-11-01 04:15:23', 1),
-(26, 'Vania Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Vanila ice cream', 'DESSERTS', 'vanilla-bean-ice-cream.jpg', 0, 1, '350.00', '2020-11-01 04:15:23', 1),
+(24, 'Berry Fruit Salad', 'The Ultimate Dessert for all our Pizza Fans. Berry fruit salad', 'DESSERTS', 'berry-fruit-salad.jpg', 0, 0, '900.00', '2020-11-01 04:15:23', 1),
+(25, 'Chocolate Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Chocolate ice cream', 'DESSERTS', 'Chocolate-Ice-Cream.jpg', 0, 0, '400.00', '2020-11-01 04:15:23', 1),
+(26, 'Vania Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Vanila ice cream', 'DESSERTS', 'vanilla-bean-ice-cream.jpg', 0, 0, '350.00', '2020-11-01 04:15:23', 1),
 -- BEVERAGES
 
-(27, 'COKE 500ML', 'The Ultimate Beverages for all our Pizza Fans. Coca-Cola 500ML bottle', 'BEVERAGES', 'coke.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
-(28, 'PEPSI 500ML', 'The Ultimate Bevarages for all our Pizza Fans. Pepci 500ML bottle', 'BEVERAGES', 'pepsi.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
-(29, 'BOTTLED WATER', 'The Ultimate Bevarages for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 1, '50.00', '2020-11-01 04:15:23', 1);
+(27, 'COKE 500ML', 'The Ultimate Beverages for all our Pizza Fans. Coca-Cola 500ML bottle', 'BEVERAGES', 'coke.jpg', 0, 0, '200.00', '2020-11-01 04:15:23', 1),
+(28, 'PEPSI 500ML', 'The Ultimate Bevarages for all our Pizza Fans. Pepci 500ML bottle', 'BEVERAGES', 'pepsi.jpg', 0, 0, '200.00', '2020-11-01 04:15:23', 1),
+(29, 'BOTTLED WATER', 'The Ultimate Bevarages for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 0, '50.00', '2020-11-01 04:15:23', 1);

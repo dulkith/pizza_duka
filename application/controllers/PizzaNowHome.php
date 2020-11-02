@@ -22,8 +22,6 @@ class PizzaNowHome extends CI_Controller
 
 		// load items data fro database
 		$data['items'] = $this->ItemModel->getItems();
-		echo "<script>console.log(JSON.parse('" . json_encode($data['items']) . "'));</script>";
-		echo "<script>console.log(JSON.parse('" . json_encode($data['sizes']) . "'));</script>";
 
 		/**** SET SESSION DATA ****/
 		// set single item in session

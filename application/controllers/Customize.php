@@ -32,10 +32,6 @@
 			//page title
 			$headerData['pizzaPageTitle'] = $data['title'];
 
-			echo "<script>console.log(JSON.parse('" . json_encode($data['item']) . "'));</script>";
-			echo "<script>console.log(JSON.parse('" . json_encode($data['sizes']) . "'));</script>";
-			echo "<script>console.log(JSON.parse('" . json_encode($data['toppings']) . "'));</script>";
-
 			// process views
 			$this->load->view('templates/header',$headerData);
 			$this->load->view('pages/customize', $data);

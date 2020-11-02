@@ -10,10 +10,10 @@ class Cart extends CI_Controller
 		$itemCount = count($cartDataArray);
 		// check cart item data
 		if ($itemCount !== 0) {
-			$headerData['pizzaPageTitle'] = 'Cart-[' . $itemCount . ']';
+			$headerData['pizzaPageTitle'] = 'Cart[' . $itemCount . ']';
 			$headerData['cartCount'] = $itemCount;
 			// calculate subtotal
-			$subTotal =0;
+			$subTotal = 0;
 			foreach ($cartDataArray as $cartItem)
 				$subTotal += $cartItem->total;
 			$data['cartDataArray'] = $cartDataArray;
@@ -45,6 +45,7 @@ class Cart extends CI_Controller
 		if (!$itemData) {
 			redirect('cart');
 		}
+		// initialize cart data session array
 		$cartDataArray = array();
 		// check exiting cart items
 		if ($this->session->has_userdata('cartData')) {
@@ -74,11 +75,37 @@ class Cart extends CI_Controller
 		}
 		// set cart data array to session
 		$this->session->set_userdata('cartData', $cartDataArray);
-		// cart calculation initialize
-		$data['cartDataArray'] = $cartDataArray;
-		$data['deliverCharge'] = 200;
 
-		echo "<script>console.log(JSON.parse('" . json_encode($data) . "'));</script>";
+		// Redirect to the cart page
+		redirect('cart');
+	}
+
+	public function addPizzaToCart()
+	{
+		// get customize pizza form data
+		$id = $_POST['form-id'];
+		$image = $_POST['form-image'];
+		$title = $_POST['form-title'];
+		$size = $_POST['form-size'];
+		$toppings = $_POST['form-toppings'];
+		$description = $size . ' - ' . $toppings;
+		$qty = $_POST['form-qty'];
+		$price = $_POST['form-price'];
+		$total = $_POST['form-total'];
+
+		// initialize cart data session array
+		$cartDataArray = array();
+		// check exiting cart items
+		if ($this->session->has_userdata('cartData')) {
+			$cartDataArray = $this->session->userdata('cartData');
+		}
+		// create new customize pizza object
+		$newCartItem = new CartItem($id, $image, $title, $description, $qty, $price, $total);
+		// add new item to cart array
+		array_push($cartDataArray, $newCartItem);
+
+		// set cart data array to session
+		$this->session->set_userdata('cartData', $cartDataArray);
 
 		// Redirect to the cart page
 		redirect('cart');
@@ -97,9 +124,6 @@ class Cart extends CI_Controller
 		}
 		// set updated cart data array to session
 		$this->session->set_userdata('cartData', $cartDataArray);
-		echo $isRemove ? 'ok' : 'err';
-
-		echo "<script>console.log(JSON.parse('" . json_encode($cartDataArray) . "'));</script>";
 
 		// Redirect to the cart page
 		redirect('cart');
@@ -126,9 +150,6 @@ class Cart extends CI_Controller
 		}
 		// set updated cart data array to session
 		$this->session->set_userdata('cartData', $cartDataArray);
-		echo $isUpdateQty ? 'ok' : 'err';
-
-		echo "<script>console.log(JSON.parse('" . json_encode($cartDataArray) . "'));</script>";
 
 		// Redirect to the cart page
 		redirect('cart');

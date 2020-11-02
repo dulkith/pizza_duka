@@ -74,7 +74,9 @@
 				</tbody>
 			</table>
 
-			<button type="button" class="btn btn-outline-success btn-lg checkout-btn">CONTINUE</button>
+			<a href="<?php echo base_url(); ?>order">
+				<button type="button" class="btn btn-outline-success btn-lg checkout-btn">CONTINUE</button>
+			</a>
 		</div>
 
 	</div>
