@@ -40,9 +40,11 @@
 									<div class="d-flex h-1">
 										<div class="mx-auto">
 											<h5><?php echo $pizza['title'] ?></h5>
-											<div class="newitem"><img alt=""
-																	  src="<?php echo base_url("assets/images/new.png"); ?>">
-											</div>
+											<?php if ($pizza['is_new'] == 1): ?>
+												<div class="newitem"><img alt=""
+																		  src="<?php echo base_url("assets/images/new.png"); ?>">
+												</div>
+											<?php endif; ?>
 											<div>
 												<img class="pizza-image"
 													 src="<?php echo base_url('assets/images/items_samples/' . $pizza['image']) ?>"
@@ -95,9 +97,11 @@
 										<div class="d-flex h-1">
 											<div class="mx-auto">
 												<h5><?php echo $item['title'] ?></h5>
-												<div class="newitem"><img alt=""
-																		  src="<?php echo base_url("assets/images/new.png"); ?>">
-												</div>
+												<?php if ($item['is_new'] == 1): ?>
+													<div class="newitem"><img alt=""
+																			  src="<?php echo base_url("assets/images/new.png"); ?>">
+													</div>
+												<?php endif; ?>
 												<div>
 													<img class="pizza-image"
 														 src="<?php echo base_url('assets/images/items_samples/' . $item['image']) ?>"
@@ -110,7 +114,8 @@
 												<div class="text-center">
 													<p><?php echo $item['description'] ?></p>
 													<h3>LKR <?php echo sprintf('%0.2f', $item['price']) ?></h3>
-													<a class="order-button btn btn-main mt-1" href=""> <i
+													<a class="order-button btn btn-main mt-1"
+													   href="<?php echo base_url('add-to-cart/' . $item['id']); ?>"> <i
 																class="fas fa-shopping-basket fa-1x"></i>
 														ADD TO CART</a>
 												</div>
@@ -143,9 +148,11 @@
 										<div class="d-flex h-1">
 											<div class="mx-auto">
 												<h5><?php echo $item['title'] ?></h5>
-												<div class="newitem"><img alt=""
-																		  src="<?php echo base_url("assets/images/new.png"); ?>">
-												</div>
+												<?php if ($item['is_new'] == 1): ?>
+													<div class="newitem"><img alt=""
+																			  src="<?php echo base_url("assets/images/new.png"); ?>">
+													</div>
+												<?php endif; ?>
 												<div>
 													<img class="pizza-image"
 														 src="<?php echo base_url('assets/images/items_samples/' . $item['image']) ?>"
@@ -158,7 +165,8 @@
 												<div class="text-center">
 													<p><?php echo $item['description'] ?></p>
 													<h3>LKR <?php echo sprintf('%0.2f', $item['price']) ?></h3>
-													<a class="order-button btn btn-main mt-1" href=""> <i
+													<a class="order-button btn btn-main mt-1"
+													   href="<?php echo base_url('add-to-cart/' . $item['id']); ?>"> <i
 																class="fas fa-shopping-basket fa-1x"></i>
 														ADD TO CART</a>
 												</div>
@@ -191,9 +199,11 @@
 										<div class="d-flex h-1">
 											<div class="mx-auto">
 												<h5><?php echo $item['title'] ?></h5>
-												<div class="newitem"><img alt=""
-																		  src="<?php echo base_url("assets/images/new.png"); ?>">
-												</div>
+												<?php if ($item['is_new'] == 1): ?>
+													<div class="newitem"><img alt=""
+																			  src="<?php echo base_url("assets/images/new.png"); ?>">
+													</div>
+												<?php endif; ?>
 												<div>
 													<img class="pizza-image"
 														 src="<?php echo base_url('assets/images/items_samples/' . $item['image']) ?>"
@@ -206,7 +216,8 @@
 												<div class="text-center">
 													<p><?php echo $item['description'] ?></p>
 													<h3>LKR <?php echo sprintf('%0.2f', $item['price']) ?></h3>
-													<a class="order-button btn btn-main mt-1" href=""> <i
+													<a class="order-button btn btn-main mt-1"
+													   href="<?php echo base_url('add-to-cart/' . $item['id']); ?>"> <i
 																class="fas fa-shopping-basket fa-1x"></i>
 														ADD TO CART</a>
 												</div>
@@ -239,9 +250,11 @@
 										<div class="d-flex h-1">
 											<div class="mx-auto">
 												<h5><?php echo $item['title'] ?></h5>
-												<div class="newitem"><img alt=""
-																		  src="<?php echo base_url("assets/images/new.png"); ?>">
-												</div>
+												<?php if ($item['is_new'] == 1): ?>
+													<div class="newitem"><img alt=""
+																			  src="<?php echo base_url("assets/images/new.png"); ?>">
+													</div>
+												<?php endif; ?>
 												<div>
 													<img class="pizza-image"
 														 src="<?php echo base_url('assets/images/items_samples/' . $item['image']) ?>"
@@ -254,7 +267,8 @@
 												<div class="text-center">
 													<p><?php echo $item['description'] ?></p>
 													<h3>LKR <?php echo sprintf('%0.2f', $item['price']) ?></h3>
-													<a class="order-button btn btn-main mt-1" href=""> <i
+													<a class="order-button btn btn-main mt-1"
+													   href="<?php echo base_url('add-to-cart/' . $item['id']); ?>"> <i
 																class="fas fa-shopping-basket fa-1x"></i>
 														ADD TO CART</a>
 												</div>

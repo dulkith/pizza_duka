@@ -61,7 +61,14 @@ CREATE TABLE `order_details` (
  CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+    `id` varchar(40) NOT NULL,
+    `ip_address` varchar(45) NOT NULL,
+    `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+    `data` blob NOT NULL,
+    PRIMARY KEY (id),
+    KEY `ci_sessions_timestamp` (`timestamp`)
+);
 
 
 INSERT INTO `sizes` (`id`, `title`, `price_percentage`) VALUES
@@ -118,6 +125,6 @@ INSERT INTO `items` (`id`, `title`, `description`, `category`, `image`, `can_cus
 (26, 'Vania Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Vanila ice cream', 'DESSERTS', 'vanilla-bean-ice-cream.jpg', 0, 1, '350.00', '2020-11-01 04:15:23', 1),
 -- BEVERAGES
 
-(27, 'COKE 500ML', 'The Ultimate Beverages for all our Pizza Fans. Coca-Cola', 'BEVERAGES', 'coke.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
-(28, 'PEPSI 500ML', 'The Ultimate Dessert for all our Pizza Fans. Pepci', 'BEVERAGES', 'pepsi.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
+(27, 'COKE 500ML', 'The Ultimate Beverages for all our Pizza Fans. Coca-Cola 500ML bottle', 'BEVERAGES', 'coke.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
+(28, 'PEPSI 500ML', 'The Ultimate Dessert for all our Pizza Fans. Pepci 500ML bottle', 'BEVERAGES', 'pepsi.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
 (29, 'BOTTLED WATER', 'The Ultimate Dessert for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 1, '50.00', '2020-11-01 04:15:23', 1);

@@ -54,7 +54,7 @@
 					</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url(); ?>cart" class="nav-link d-flex flex-row">
-							<h3><span class="badge badge-success badge-secondary">2</span></h3>
+							<h3><span class="badge badge-success badge-secondary"><?php echo $cartCount ?></span></h3>
 							<i class="fas fa-shopping-basket fa-2x"></i>
 						</a>
 					</li>

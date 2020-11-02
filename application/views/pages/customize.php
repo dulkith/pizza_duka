@@ -63,9 +63,11 @@
 												</div>
 
 												<div class="col-xs-4 text-center ml-4">
-													<button type="button" class="btn btn-success btn-lg">ADD TO
-														CART
-													</button>
+													<a href="<?php echo base_url('add-to-cart/' . $item['id']); ?>">
+														<button type="button" class="btn btn-success btn-lg">ADD TO
+															CART
+														</button>
+													</a>
 												</div>
 
 											</div>
