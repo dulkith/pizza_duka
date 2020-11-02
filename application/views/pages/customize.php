@@ -64,8 +64,7 @@
 
 												<div class="col-xs-4 text-center ml-4">
 													<!-- Add customized pizza to cart-->
-													<form action="<?php echo base_url("add-to-cart-pizza"); ?>"
-														  method="POST">
+													<form action="<?php echo base_url("add-to-cart-pizza"); ?>" method="POST">
 														<input id="form-id" name="form-id" type="hidden"
 															   value="<?php echo $item['id'] ?>"/>
 														<input id="form-image" name="form-image" type="hidden"

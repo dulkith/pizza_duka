@@ -5,7 +5,6 @@ class SizeModel extends CI_Model
 {
 	public function __construct()
 	{
-		$this->load->database();
 	}
 
 	public function getSizes()

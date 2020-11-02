@@ -83,15 +83,15 @@ class Cart extends CI_Controller
 	public function addPizzaToCart()
 	{
 		// get customize pizza form data
-		$id = $_POST['form-id'];
-		$image = $_POST['form-image'];
-		$title = $_POST['form-title'];
-		$size = $_POST['form-size'];
-		$toppings = $_POST['form-toppings'];
+		$id = $this->input->post('form-id');
+		$image =  $this->input->post('form-image');
+		$title = $this->input->post('form-title');
+		$size =  $this->input->post('form-size');
+		$toppings =  $this->input->post('form-toppings');
 		$description = $size . ' - ' . $toppings;
-		$qty = $_POST['form-qty'];
-		$price = $_POST['form-price'];
-		$total = $_POST['form-total'];
+		$qty = $this->input->post('form-qty');
+		$price =  $this->input->post('form-price');
+		$total = $this->input->post('form-total');
 
 		// initialize cart data session array
 		$cartDataArray = array();

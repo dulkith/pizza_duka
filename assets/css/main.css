@@ -457,6 +457,9 @@ table .absorbing-column {
 	border-color: #cccccc;
 }
 
+.error-messages{
+	color: #ae0000;
+}
 /* ODER SUMMARY BOX */
 
 .summary-box h4 {

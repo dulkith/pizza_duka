@@ -5,9 +5,9 @@
 
 <section class="bright py-5">
 	<div class="container">
-		<div class="text-center">
+		<div class="text-center mb-4">
 			<h1>Order Details</h1>
-			<p class="font-weight-light">Enter your order details</p>
+			<p class="font-weight-light">Enter your order details & Checkout your order</p>
 		</div>
 		<div class="row">
 			<div class="row justify-content-center">
@@ -16,53 +16,68 @@
 						<div class="pt-4">
 							<div class="row">
 								<div class="col-12">
-									<div class="row mx-4">
-										<div class="col-12">
-											<label class="order-confirm-form-label">Name</label>
-										</div>
-										<div class="col-12 col-sm-6">
-											<input class="order-confirm-form-input" placeholder="First Name">
-										</div>
-										<div class="col-12 col-sm-6 mt-2 mt-sm-0">
-											<input class="order-confirm-form-input" placeholder="Last Name">
-										</div>
-									</div>
 
-									<div class="row mt-3 mx-4">
-										<div class="col-12">
-											<label class="order-confirm-form-label">Telephone</label>
-										</div>
-										<div class="col-12">
-											<input class="order-confirm-form-input datepicker"
-												   placeholder="Enter mobile number" type="text"
-												   id="date-picker-example">
-										</div>
-									</div>
+									<form action="<?php echo base_url("checkout"); ?>" method="post">
+										<div class="row mx-4">
+											<div class="col-12">
+												<label class="order-confirm-form-label">Name</label>
+											</div>
+											<div class="col-12 col-sm-6">
+												<input id="first-name" name="first-name"
+													   class="order-confirm-form-input" placeholder="First Name">
+												<span class="error-messages mt-3"><?php echo form_error('first-name'); ?></span>
+											</div>
+											<div class="col-12 col-sm-6 mt-2 mt-sm-0">
+												<input id="last-name" name="last-name" class="order-confirm-form-input"
+													   placeholder="Last Name">
+												<span class="error-messages"><?php echo form_error('last-name'); ?></span>
+											</div>
 
-									<div class="row mt-3 mx-4">
-										<div class="col-12">
-											<label class="order-confirm-form-label">Deliver Address</label>
 										</div>
-										<div class="col-12">
-											<input class="order-confirm-form-input" placeholder="Address Line 1">
-										</div>
-										<div class="col-12 mt-2">
-											<input class="order-confirm-form-input" placeholder="Address Line 2">
-										</div>
-										<div class="col-12 col-sm-6 mt-2 pr-sm-2">
-											<input class="order-confirm-form-input" placeholder="City">
-										</div>
-										<div class="col-12 col-sm-6 mt-2 pl-sm-0">
-											<input class="order-confirm-form-input" placeholder="Region">
-										</div>
-									</div>
 
-									<div class="col-12 mt-5 mb-3 d-flex justify-content-center">
-										<button type="button" class="btn btn-outline-success btn-lg checkout-btn">
-											CHECKOUT
-										</button>
+										<div class="row mt-3 mx-4">
+											<div class="col-12">
+												<label class="order-confirm-form-label">Telephone</label>
+											</div>
+											<div class="col-12">
+												<input id="mobile" name="mobile"
+													   class="order-confirm-form-input datepicker"
+													   placeholder="Enter mobile number" type="text">
+												<span class="error-messages mt-3"><?php echo form_error('mobile'); ?></span>
+											</div>
+										</div>
 
-									</div>
+										<div class="row mt-3 mx-4">
+											<div class="col-12">
+												<label class="order-confirm-form-label">Deliver Address</label>
+											</div>
+											<div class="col-12">
+												<input id="address-line-one" name="address-line-one"
+													   class="order-confirm-form-input" placeholder="Address Line 1">
+												<span class="error-messages mt-3"><?php echo form_error('address-line-one'); ?></span>
+											</div>
+											<div class="col-12 mt-2">
+												<input id="address-line-two" name="address-line-two"
+													   class="order-confirm-form-input" placeholder="Address Line 2">
+											</div>
+											<div class="col-12 col-sm-6 mt-2 pr-sm-2">
+												<input id="city" name="city" class="order-confirm-form-input"
+													   placeholder="City">
+												<span class="error-messages mt-3"><?php echo form_error('city'); ?></span>
+											</div>
+											<div class="col-12 col-sm-6 mt-2 pl-sm-0">
+												<input id="region" name="region" class="order-confirm-form-input"
+													   placeholder="Region">
+												<span class="error-messages mt-3"><?php echo form_error('region'); ?></span>
+											</div>
+										</div>
+
+										<div class="col-12 mt-5 mb-3 d-flex justify-content-center">
+											<button type="submit" class="btn btn-outline-success btn-lg checkout-btn">
+												CHECKOUT
+											</button>
+										</div>
+									</form>
 
 								</div>
 							</div>

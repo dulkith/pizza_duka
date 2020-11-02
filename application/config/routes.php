@@ -10,6 +10,7 @@ $route['home'] = 'pizzaNowHome/index';
 $route['menu'] = 'menu/index';
 $route['cart'] = 'cart/index';
 $route['order'] = 'order/index';
+$route['checkout'] = 'order/checkout';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';

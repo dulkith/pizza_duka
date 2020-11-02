@@ -34,7 +34,7 @@ CREATE TABLE `customers` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `first_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
  `last_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
- `phone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+ `mobile` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
  `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
  PRIMARY KEY (`id`)
@@ -42,8 +42,12 @@ CREATE TABLE `customers` (
 
 CREATE TABLE `orders` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
+ `order_id` varchar(20) NOT NULL,
  `customer_id` int(11) NOT NULL,
- `grand_total` decimal(8,2) NOT NULL,
+ `item_count` int(11) NOT NULL,
+ `sub_total` decimal(8,2) NOT NULL,
+ `deliver_charge` decimal(8,2) NOT NULL,
+ `total` decimal(8,2) NOT NULL,
  `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
  PRIMARY KEY (`id`),
  KEY `customer_id` (`customer_id`),

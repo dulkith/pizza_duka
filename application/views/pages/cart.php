@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="text-center">
 			<h1>Cart</h1>
-			<p class="font-weight-light mb-5">Checkout your food items</p>
+			<p class="font-weight-light mb-5">Your order details & Edit order details</p>
 		</div>
 		<div class="row justify-content-center">
 
