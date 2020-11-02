@@ -126,5 +126,5 @@ INSERT INTO `items` (`id`, `title`, `description`, `category`, `image`, `can_cus
 -- BEVERAGES
 
 (27, 'COKE 500ML', 'The Ultimate Beverages for all our Pizza Fans. Coca-Cola 500ML bottle', 'BEVERAGES', 'coke.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
-(28, 'PEPSI 500ML', 'The Ultimate Dessert for all our Pizza Fans. Pepci 500ML bottle', 'BEVERAGES', 'pepsi.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
-(29, 'BOTTLED WATER', 'The Ultimate Dessert for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 1, '50.00', '2020-11-01 04:15:23', 1);
+(28, 'PEPSI 500ML', 'The Ultimate Bevarages for all our Pizza Fans. Pepci 500ML bottle', 'BEVERAGES', 'pepsi.jpg', 0, 1, '200.00', '2020-11-01 04:15:23', 1),
+(29, 'BOTTLED WATER', 'The Ultimate Bevarages for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 1, '50.00', '2020-11-01 04:15:23', 1);
