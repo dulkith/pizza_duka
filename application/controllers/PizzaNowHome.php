@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class PizzaNowHome
+ * Pizza NoW! online order system home page controller controller class
+ */
 class PizzaNowHome extends CI_Controller
 {
 	public function index()
@@ -22,33 +26,6 @@ class PizzaNowHome extends CI_Controller
 
 		// load items data fro database
 		$data['items'] = $this->ItemModel->getItems();
-
-		/**** SET SESSION DATA ****/
-		// set single item in session
-		//$this->session->set_userdata('favourite_website', 'https://tutsplus.com');
-
-		// set array of items in session
-//		$arraydata = array(
-//			'author_name'  => 'Sajal Soniiiiii',
-//			'website'     => 'http://code.tutsplus.com',
-//			'twitter_id' => '@sajalsoni',
-//			'interests' => array('tennis', 'travelling')
-//		);
-//		$this->session->set_userdata($arraydata);
-
-		/**** GET SESSION DATA ****/
-		// get data from session
-//		echo "<br>";
-//		echo "Favourite Website: ". $this->session->userdata('favourite_website');
-//		echo "<br>";
-//		echo "Author Name: ". $this->session->userdata('author_name');
-//		echo "<br>";
-//		echo "Interest (Array Example): " . $this->session->userdata('interests')[0];
-//		echo "<br>";
-
-		// get e'thing stored in session at once
-//		echo '<pre>';
-//		print_r($this->session->userdata());
 
 		// process views
 		$this->load->view('templates/header',$headerData);

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Cart
+ * Pizza NoW! online order system cart controller class
+ */
 class Cart extends CI_Controller
 {
 	public function index()
@@ -7,9 +11,11 @@ class Cart extends CI_Controller
 		// get cart data
 		$cartDataArray = $this->session->userdata('cartData');
 		// get cart item count
-		$itemCount = count($cartDataArray);
+		$itemCount = 0;
 		// check cart item data
-		if ($itemCount !== 0) {
+		if ($this->session->has_userdata('cartData')) {
+			// get cart item count
+			$itemCount = count($cartDataArray);
 			$headerData['pizzaPageTitle'] = 'Cart[' . $itemCount . ']';
 			$headerData['cartCount'] = $itemCount;
 			// calculate subtotal
@@ -84,13 +90,13 @@ class Cart extends CI_Controller
 	{
 		// get customize pizza form data
 		$id = $this->input->post('form-id');
-		$image =  $this->input->post('form-image');
+		$image = $this->input->post('form-image');
 		$title = $this->input->post('form-title');
-		$size =  $this->input->post('form-size');
-		$toppings =  $this->input->post('form-toppings');
+		$size = $this->input->post('form-size');
+		$toppings = $this->input->post('form-toppings');
 		$description = $size . ' - ' . $toppings;
 		$qty = $this->input->post('form-qty');
-		$price =  $this->input->post('form-price');
+		$price = $this->input->post('form-price');
 		$total = $this->input->post('form-total');
 
 		// initialize cart data session array

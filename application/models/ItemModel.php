@@ -1,6 +1,10 @@
 <?php
 
-
+/**
+ * Class ItemModel
+ * Pizza NoW! online order system item model class
+ *
+ */
 class ItemModel extends CI_Model
 {
 	public function __construct()

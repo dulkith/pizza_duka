@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Class Menu
- * Pizza NoW! online order system menu controller class
+ * Class Delivery
+ * Pizza NoW! online order system item delivery controller class
  */
-class Menu extends CI_Controller
+class Delivery extends CI_Controller
 {
-	public function index()
+	public function __construct() {
+		parent::__construct();
+		// set local time zone
+		date_default_timezone_set('Asia/Colombo');
+	}
+
+	public function index($orderId)
 	{
 		// get cart item count
 		$itemCount = 0;
@@ -19,16 +25,14 @@ class Menu extends CI_Controller
 			$headerData['cartCount'] = $itemCount;
 		}
 		$headerData['cartCount'] = $itemCount;
-		$headerData['pizzaPageTitle'] = 'Menu';
+		$headerData['pizzaPageTitle'] = 'Delivery';
 
-		// get pizza sizes
-		$data['sizes'] = $this->SizeModel->getSizes();
-		// load items data fro database
-		$data['items'] = $this->ItemModel->getItems();
+		// find order by id
+		$data['orderData'] = $this->OrderModel->getOrderById($orderId);
 
 		// process views
 		$this->load->view('templates/header', $headerData);
-		$this->load->view('pages/menu', $data);
+		$this->load->view('pages/delivery', $data);
 		$this->load->view('templates/shopInformation');
 		$this->load->view('templates/footer');
 	}

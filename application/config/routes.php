@@ -11,6 +11,7 @@ $route['menu'] = 'menu/index';
 $route['cart'] = 'cart/index';
 $route['order'] = 'order/index';
 $route['checkout'] = 'order/checkout';
+$route['delivery/(:any)'] = 'delivery/index/$1';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';

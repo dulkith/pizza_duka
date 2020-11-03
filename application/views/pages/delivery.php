@@ -41,8 +41,14 @@
 </section>
 
 <script>
-	$('#clock').countdown('2021/1/1').on('update.countdown', function (event) {
-		const $this = $(this).html(event.strftime( '<div class="row thank-you-img">' +
+
+	// get order data
+	const orderCreateDateTime = <?php echo json_encode($orderData); ?>;
+	const deliverTime = new Date(orderCreateDateTime.created);
+	deliverTime.setMinutes(deliverTime.getMinutes()+30);
+	// display contdown
+	$('#clock').countdown(deliverTime).on('update.countdown', function (event) {
+		$(this).html(event.strftime( '<div class="row thank-you-img">' +
 				'<div><span class="clock-numbers">%M</span> Min</div>'
 				+ '<div><span class="clock-numbers  ml-4">%S</span> Sec</div></div>'));
 	});

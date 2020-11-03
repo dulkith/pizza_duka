@@ -42,7 +42,6 @@ CREATE TABLE `customers` (
 
 CREATE TABLE `orders` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
- `order_id` varchar(20) NOT NULL,
  `customer_id` int(11) NOT NULL,
  `item_count` int(11) NOT NULL,
  `sub_total` decimal(8,2) NOT NULL,
@@ -58,8 +57,12 @@ CREATE TABLE `order_details` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `order_id` int(11) NOT NULL,
  `product_id` int(11) NOT NULL,
+ `title` varchar(255) NOT NULL,
+ `image` varchar(100) NOT NULL,
+ `cart_description` varchar(255) NOT NULL,
  `quantity` int(5) NOT NULL,
- `sub_total` decimal(8,2) NOT NULL,
+ `price` decimal(8,2) NOT NULL,
+ `total` decimal(8,2) NOT NULL,
  PRIMARY KEY (`id`),
  KEY `order_id` (`order_id`),
  CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION

@@ -1,15 +1,28 @@
 <?php
 
+/**
+ * Class Order
+ * Pizza NoW! online order system order controller class
+ */
 class Order extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		// set local time zone
+		date_default_timezone_set('Asia/Colombo');
+	}
+
 	public function index()
 	{
 		// get cart data
 		$cartDataArray = $this->session->userdata('cartData');
 		// get cart item count
-		$itemCount = count($cartDataArray);
+		$itemCount = 0;
 		// check cart item data
-		if ($itemCount !== 0) {
+		if ($this->session->has_userdata('cartData')) {
+			// get cart item count
+			$itemCount = count($cartDataArray);
 			$headerData['pizzaPageTitle'] = 'Cart[' . $itemCount . ']';
 			$headerData['cartCount'] = $itemCount;
 			// calculate subtotal
@@ -57,6 +70,7 @@ class Order extends CI_Controller
 				. ' ' . strip_tags($this->input->post('address-line-two'))
 				. ' ' . strip_tags($this->input->post('city'))
 				. ' ' . strip_tags($this->input->post('region')),
+			'created' => date("Y-m-d H:i:s")
 		);
 		// order detail form validation process
 		if ($this->form_validation->run() == FALSE) {
@@ -73,28 +87,46 @@ class Order extends CI_Controller
 				// check cart item data
 				// calculate subtotal and total
 				$subTotal = 0;
-				foreach ($cartDataArray as $cartItem){
+				foreach ($cartDataArray as $cartItem) {
 					$subTotal += $cartItem->total;
 				}
 				$deliverCharge = 200;
 				$total = $subTotal + $deliverCharge;
-				// generate order id
-				$orderId = strtoupper(random_string('alnum',20));
 
 				// create order data object
 				$newOrdData = array(
-					'order_id' => $orderId,
 					'customer_id' => $customerSaveResponse,
 					'item_count' => $itemCount,
 					'sub_total' => $subTotal,
 					'deliver_charge' => $deliverCharge,
-					'total' => $total
+					'total' => $total,
+					'created' => date("Y-m-d H:i:s")
 				);
 				$orderSaveResponse = $this->OrderModel->saveOrder($newOrdData);
 				// save response validate and save order item data
-				if($orderSaveResponse){
+				if ($orderSaveResponse) {
+					$newOrderDetailsData = array();
+					foreach ($cartDataArray as $cartItem) {
+						// create new item object
+						$newOrdItemData = array(
+							'order_id' => $orderSaveResponse,
+							'product_id' => $cartItem->id,
+							'title' => $cartItem->title,
+							'image' => $cartItem->image,
+							'cart_description' => $cartItem->cartDescription,
+							'quantity' => $cartItem->qty,
+							'price' => $cartItem->price,
+							'total' => $cartItem->total
+						);
+						// add new item data to list
+						array_push($newOrderDetailsData, $newOrdItemData);
+					}
+					// save new order items
+					$insertOrderItems = $this->OrderModel->saveOrderItemsBatch($newOrderDetailsData);
 
-					echo "<script>console.log(JSON.parse('" . json_encode($cartDataArray) . "'));</script>";
+					$this->session->unset_userdata('cartData');
+
+					redirect('delivery/' . $orderSaveResponse);
 				}
 
 			}
@@ -103,6 +135,17 @@ class Order extends CI_Controller
 	}
 
 }
+
+
+/*
+$this->id = $id;
+		$this->image = $image;
+		$this->title = $title;
+		$this->cartDescription = $cartDescription;
+		$this->qty = $qty;
+		$this->price = $price;
+		$this->total = $total;
+*/
 
 class CartItem
 {

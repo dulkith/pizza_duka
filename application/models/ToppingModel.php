@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Class ToppingModel
+ * Pizza NoW! online order system topping model class
+ */
 class ToppingModel extends CI_Model
 {
 	public function __construct()
