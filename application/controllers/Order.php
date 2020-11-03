@@ -123,9 +123,11 @@ class Order extends CI_Controller
 					}
 					// save new order items
 					$insertOrderItems = $this->OrderModel->saveOrderItemsBatch($newOrderDetailsData);
-
+					// reset user cart
 					$this->session->unset_userdata('cartData');
-
+					// set order id as new deliver
+					$this->session->set_userdata('deliverId', $orderSaveResponse);
+					// display deliver count down
 					redirect('delivery/' . $orderSaveResponse);
 				}
 

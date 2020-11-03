@@ -50,7 +50,7 @@
 							Order</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url(); ?>deliver"><i class="fas fa-motorcycle"></i>
+						<a class="nav-link" href="<?php echo base_url(); ?>delivery"><i class="fas fa-motorcycle"></i>
 							Deliver</a>
 					</li>
 					<li class="nav-item">
