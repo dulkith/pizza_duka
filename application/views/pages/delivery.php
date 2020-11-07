@@ -1,4 +1,4 @@
-<!-- PIZZA BANNE DETAILS -->
+<!-- PIZZA BANNER DETAILS -->
 <section class="home_piza_banner">
 	<img class="img-fluid" alt="banner" src="<?php echo base_url("assets/images/sub_banner_piza_kade.jpg"); ?>">
 </section>
@@ -11,7 +11,8 @@
 					<div class="justify-content-center">
 						<div class="thank-you-img">
 							<h1 class="display-3">Thank You!</h1>
-							<img class="party-image" src="<?php echo base_url("assets/images/party.png"); ?>" alt="party">
+							<img class="party-image" src="<?php echo base_url("assets/images/party.png"); ?>"
+								 alt="party">
 						</div>
 					</div>
 
@@ -30,7 +31,7 @@
 						Having trouble? <a href="">Contact us</a>
 					</p>
 					<p class="lead">
-						<a class="btn btn-success btn-sm" href="#" role="button">Continue
+						<a class="btn btn-success btn-sm" href="<?php echo base_url(); ?>menu" role="button">Continue
 							to Menu</a>
 					</p>
 				</div>
@@ -45,10 +46,10 @@
 	// get order data
 	const orderCreateDateTime = <?php echo json_encode($orderData); ?>;
 	const deliverTime = new Date(orderCreateDateTime.created);
-	deliverTime.setMinutes(deliverTime.getMinutes()+30);
+	deliverTime.setMinutes(deliverTime.getMinutes() + 30);
 	// display contdown
 	$('#clock').countdown(deliverTime).on('update.countdown', function (event) {
-		$(this).html(event.strftime( '<div class="row thank-you-img">' +
+		$(this).html(event.strftime('<div class="row thank-you-img">' +
 				'<div><span class="clock-numbers">%M</span> Min</div>'
 				+ '<div><span class="clock-numbers  ml-4">%S</span> Sec</div></div>'));
 	});

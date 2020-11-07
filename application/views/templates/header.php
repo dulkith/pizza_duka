@@ -19,6 +19,7 @@
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery.countdown.js"); ?>"></script>
 	<!--	TEST-->
 	<script>
+		// ***ONLY FOR TEST
 		//setInterval(function(){location.reload(true);}, 10000);
 	</script>
 	<!--load all styles -->
@@ -30,9 +31,9 @@
 	<nav id="kadeHeader" class="fixed-top navbar navbar-expand-lg">
 		<div class="container">
 			<!-- Pizza kade logo -->
-			<a class="nav-link" href="<?php echo base_url(); ?>home"><img
-						src="<?php echo base_url("assets/images/pizza_kade_logo_main.png"); ?>" alt="Logo"
-						style="width:100px;"></a>
+			<a class="nav-link" href="<?php echo base_url(); ?>home">
+				<img class="logo" src="<?php echo base_url("assets/images/pizza_kade_logo_main.png"); ?>"
+					 alt="Logo"></a>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<!-- Main navigation bar items -->
 				<ul class="navbar-nav ml-auto">

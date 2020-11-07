@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['default_controller'] = 'pizzaNowHome/index';
 $route['customize/(:any)'] = 'customize/index/$1';
 $route['add-to-cart/(:any)'] = 'cart/addItemToCart/$1';
 $route['add-to-cart-pizza'] = 'cart/addPizzaToCart';
@@ -12,7 +13,7 @@ $route['cart'] = 'cart/index';
 $route['order'] = 'order/index';
 $route['checkout'] = 'order/checkout';
 $route['delivery/(:any)'] = 'delivery/index/$1';
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'pizzaNowHome/index';
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

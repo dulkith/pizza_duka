@@ -50,6 +50,10 @@ section {
 	font-size: 17px;
 }
 
+.logo {
+	width: 100px;
+}
+
 /* HOME BANNER */
 
 .home_piza_banner h1 {
@@ -171,7 +175,7 @@ section {
 	margin-right: 20px
 }
 
-.menu-price{
+.menu-price {
 	font-size: 0.9em;
 	font-weight: 600;
 }
@@ -457,9 +461,10 @@ table .absorbing-column {
 	border-color: #cccccc;
 }
 
-.error-messages{
+.error-messages {
 	color: #ae0000;
 }
+
 /* ODER SUMMARY BOX */
 
 .summary-box h4 {

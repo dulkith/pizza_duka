@@ -2,23 +2,35 @@
 	<div class="container d-flex justify-content-center">
 		<div class="row mt-3 text-center">
 			<figure class="kade_types">
-				<img src="<?php echo base_url("assets/images/kade_icons/pizza.png"); ?>" width="100" height="100"
-					 alt="my img"/>
+				<a href="#pizza">
+					<img src="<?php echo base_url("assets/images/kade_icons/pizza.png"); ?>" width="100"
+						 height="100"
+						 alt="my img"/>
+				</a>
 				<figcaption class="kade_types_captions"> PIZZA</figcaption>
 			</figure>
 			<figure class="kade_types">
-				<img src="<?php echo base_url("assets/images/kade_icons/noodlse.png"); ?>" width="100" height="100"
-					 alt="my img"/>
+				<a href="#pasta">
+					<img src="<?php echo base_url("assets/images/kade_icons/noodlse.png"); ?>" width="100"
+						 height="100"
+						 alt="my img"/>
+				</a>
 				<figcaption class="kade_types_captions"> PASTA</figcaption>
 			</figure>
 			<figure class="kade_types">
-				<img src="<?php echo base_url("assets/images/kade_icons/sides.png"); ?>" width="100" height="100"
-					 alt="my img"/>
+				<a href="#sides">
+					<img src="<?php echo base_url("assets/images/kade_icons/sides.png"); ?>" width="100"
+						 height="100"
+						 alt="my img"/>
+				</a>
 				<figcaption class="kade_types_captions"> SIDES</figcaption>
 			</figure>
 			<figure class="kade_types">
-				<img src="<?php echo base_url("assets/images/kade_icons/desserts.png"); ?>" width="100" height="100"
-					 alt="my img"/>
+				<a href="#desserts">
+					<img src="<?php echo base_url("assets/images/kade_icons/desserts.png"); ?>" width="100"
+						 height="100"
+						 alt="my img"/>
+				</a>
 				<figcaption class="kade_types_captions"> DESSERTS</figcaption>
 			</figure>
 		</div>
@@ -26,7 +38,7 @@
 </section>
 
 <!-- ITEMS MENU HOME-->
-<section class="bright py-2">
+<section class="bright py-2" id="pizza">
 	<div class="container mx-auto">
 		<h2 class="section_heading">LOADED <span>PIZZA</span> RANGE</h2>
 		<div class="row mt-3">
@@ -82,7 +94,7 @@
 
 </section>
 
-<section class="bright py-3">
+<section class="bright py-3" id="pasta">
 	<div class="container">
 		<div class="container">
 			<h2 class="section_heading">PASTA</h2>
@@ -133,7 +145,7 @@
 </section>
 
 
-<section class="bright py-3">
+<section class="bright py-3" id="sides">
 	<div class="container">
 		<div class="container">
 			<h2 class="section_heading">SIDES</h2>
@@ -184,7 +196,7 @@
 </section>
 
 
-<section class="bright py-3">
+<section class="bright py-3" id="desserts">
 	<div class="container">
 		<div class="container">
 			<h2 class="section_heading">DESSERTS</h2>

@@ -1,4 +1,4 @@
-<!-- PIZZA BANNE DETAILS -->
+<!-- PIZZA BANNER DETAILS -->
 <section class="home_piza_banner">
 	<img class="img-fluid" alt="banner" src="<?php echo base_url("assets/images/sub_banner_piza_kade.jpg"); ?>">
 </section>
