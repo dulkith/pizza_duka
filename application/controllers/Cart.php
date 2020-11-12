@@ -13,7 +13,7 @@ class Cart extends CI_Controller
 		// get cart item count
 		$itemCount = 0;
 		// check cart item data
-		if ($this->session->has_userdata('cartData')) {
+		if ($cartDataArray != []) {
 			// get cart item count
 			$itemCount = count($cartDataArray);
 			$headerData['pizzaPageTitle'] = 'Cart[' . $itemCount . ']';
@@ -37,7 +37,7 @@ class Cart extends CI_Controller
 		$headerData['cartCount'] = $itemCount;
 		// process views
 		$this->load->view('templates/header', $headerData);
-		$this->load->view('pages/cart-empty');
+		$this->load->view('pages/cartempty');
 		$this->load->view('templates/shopInformation');
 		$this->load->view('templates/footer');
 

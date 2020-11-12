@@ -3,7 +3,7 @@ CREATE TABLE `items` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `category` enum('PIZZA','PASTA','SIDES','DESSERTS','BEVERAGES') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'PIZZA' COMMENT 'PIZZA | PASTA | SIDES | DESSERTS | BEVERAGES',
+  `category` enum('PIZZA','PASTA','SIDES','DESSERTS','BEVERAGES', 'SPECIAL_MEAL') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'PIZZA' COMMENT 'PIZZA | PASTA | SIDES | DESSERTS | BEVERAGES | SPECIAL_MEAL',
   `image` varchar(100) NOT NULL,
   `can_customise` tinyint(1) NOT NULL DEFAULT 0,
   `is_new` tinyint(1) NOT NULL DEFAULT 0,
@@ -131,7 +131,10 @@ INSERT INTO `items` (`id`, `title`, `description`, `category`, `image`, `can_cus
 (25, 'Chocolate Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Chocolate ice cream', 'DESSERTS', 'Chocolate-Ice-Cream.jpg', 0, 0, '400.00', '2020-11-01 04:15:23', 1),
 (26, 'Vania Ice-Cream', 'The Ultimate Dessert for all our Pizza Fans. Vanila ice cream', 'DESSERTS', 'vanilla-bean-ice-cream.jpg', 0, 0, '350.00', '2020-11-01 04:15:23', 1),
 -- BEVERAGES
-
 (27, 'COKE 500ML', 'The Ultimate Beverages for all our Pizza Fans. Coca-Cola 500ML bottle', 'BEVERAGES', 'coke.jpg', 0, 0, '200.00', '2020-11-01 04:15:23', 1),
 (28, 'PEPSI 500ML', 'The Ultimate Bevarages for all our Pizza Fans. Pepci 500ML bottle', 'BEVERAGES', 'pepsi.jpg', 0, 0, '200.00', '2020-11-01 04:15:23', 1),
-(29, 'BOTTLED WATER', 'The Ultimate Bevarages for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 0, '50.00', '2020-11-01 04:15:23', 1);
+(29, 'BOTTLED WATER', 'The Ultimate Bevarages for all our Pizza Fans. Bottle water', 'BEVERAGES', 'aquafina.jpg', 0, 0, '50.00', '2020-11-01 04:15:23', 1),
+-- SPECIAL_MEAL
+(30, 'PIZZA NOW SPECIAL', 'The Ultimate Special meal, Pizza with coke and give 20% special discount for every online order', 'SPECIAL_MEAL', 'special_meal1.jpg', 0, 0, '999.00', '2020-11-01 04:15:23', 1),
+(31, 'SPECIAL VEG PIZZA', 'The Ultimate Special meal, veg pizza with deserts and give 30% special discount for every online order', 'SPECIAL_MEAL', 'special_meal2.jpg', 0, 0, '1999.00', '2020-11-01 04:15:23', 1),
+(32, 'HAPPY HOUR', 'The Ultimate Special meal, with deserts and give 50% special discount for every online order', 'SPECIAL_MEAL', 'special_meal3.jpg', 0, 0, '1499.00', '2020-11-01 04:15:23', 1);
